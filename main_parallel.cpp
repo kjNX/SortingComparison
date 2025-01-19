@@ -1,6 +1,4 @@
 #include <cstdio>
-#include <vector>
-#include <iostream>
 #include <thread>
 #include "Parallel.hpp"
 #include "Commons.hpp"
@@ -10,16 +8,15 @@ int main(int argc, char** argv)
 {
 	printf("Ignition!\n");
 	auto startTime{steady_clock::now()};
-	constexpr int TOTAL_SIZE{100000};
 	bool flag{false}; // 好き好き好き好き
 	std::mutex flagMutex{};
 	std::array<int, Commons::SET_COUNT> bucketSizes{};
-	std::array<int*, Commons::SET_COUNT> buckets{new int[TOTAL_SIZE]{}, new int[TOTAL_SIZE]{}, new int[TOTAL_SIZE]{},
-								new int[TOTAL_SIZE]{}, new int[TOTAL_SIZE]{}};
+	std::array<int*, Commons::SET_COUNT> buckets{new int[Commons::MAX_COUNT]{}, new int[Commons::MAX_COUNT]{}, new int[Commons::MAX_COUNT]{},
+								new int[Commons::MAX_COUNT]{}, new int[Commons::MAX_COUNT]{}};
 	std::array<std::mutex, Commons::SET_COUNT> bucketMutexes{};
 
 	std::jthread cardDispatcher{Parallel::liveCardGenerator, std::ref(buckets), std::ref(bucketSizes),
-								std::ref(bucketMutexes), std::ref(flag), std::ref(flagMutex), TOTAL_SIZE};
+								std::ref(bucketMutexes), std::ref(flag), std::ref(flagMutex), Commons::MAX_COUNT};
 	std::array<std::jthread, Commons::SET_COUNT> sortThreads;
 	for(int i{0}; i < Commons::SET_COUNT; ++i)
 		sortThreads[i] = std::jthread{

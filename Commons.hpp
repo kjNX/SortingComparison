@@ -7,7 +7,8 @@ typedef std::chrono::steady_clock steady_clock;
 
 namespace Commons
 {
-	inline constexpr int SET_COUNT{5};
+	inline constexpr int SET_COUNT{5}; // Since this repeats so much throughout, it would be a magic number, huh?
+	inline constexpr int MAX_COUNT{100000}; // The amount of cards to generate. Affects all algorithms.
 	// sorted cards. sometimes hardcoding is the best way
 	enum Card
 	{

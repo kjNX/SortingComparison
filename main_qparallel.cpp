@@ -7,10 +7,9 @@
 int main(int argc, char** argv)
 {
 	printf("Ignition!\n");
-	constexpr int DEF_SIZE{100000};
 	auto startTime{steady_clock::now()};
 	int bucketSizes[Commons::SET_COUNT]{};
-	std::array<int*, Commons::SET_COUNT> buckets{Sequential::makeCardArray(bucketSizes, DEF_SIZE)};
+	std::array<int*, Commons::SET_COUNT> buckets{Sequential::makeCardArray(bucketSizes)};
 	std::array<std::jthread, Commons::SET_COUNT> threads;
 	for(int i{0}; i < Commons::SET_COUNT; ++i)
 		threads[i] = std::jthread{Parallel::quickSort, buckets[i], 0, bucketSizes[i] - 1};

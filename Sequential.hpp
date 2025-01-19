@@ -5,7 +5,7 @@
 
 namespace Sequential
 {
-	std::array<int*, Commons::SET_COUNT> makeCardArray(int* const& bucketSizes = nullptr, const unsigned& size = 4000000);
+	std::array<int*, Commons::SET_COUNT> makeCardArray(int* const& bucketSizes = nullptr, const unsigned& size = Commons::MAX_COUNT);
 	void shrink(int*& array, const unsigned& size);
 
 	void insertionSort(int* const& array, const unsigned& size);
