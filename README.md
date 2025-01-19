@@ -24,4 +24,10 @@ This program sorts a set of randomly generated cards and shows the time taken fr
    - MinGW: Run g++ on the build folder.
 3. Enjoy ^.^
 
+## Screenshots
+
+![Sequential Quick Sort (~2 seconds)](SequentialQSort.png)
+
+![Parallel Insertion Sort (~30 minutes)](ParallelISort.png)
+
 ## Made by kjNX
