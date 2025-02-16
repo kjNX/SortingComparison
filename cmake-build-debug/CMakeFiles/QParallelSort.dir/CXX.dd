@@ -1,0 +1,11 @@
+ninja_dyndep_version = 1.0
+build CMakeFiles/QParallelSort.dir/main_qparallel.cpp.o: dyndep
+
+build CMakeFiles/QParallelSort.dir/Sequential.cpp.o: dyndep
+
+build CMakeFiles/QParallelSort.dir/Parallel.cpp.o: dyndep
+
+build CMakeFiles/QParallelSort.dir/Commons.cpp.o: dyndep
+
+build CMakeFiles/QParallelSort.dir/thread_pool/ThreadPool.cpp.o: dyndep
+

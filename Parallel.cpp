@@ -23,6 +23,7 @@ void Parallel::liveCardGenerator(std::array<int*, Commons::SET_COUNT>& buckets, 
 	flag = true;
 }
 
+// sorts cards as it receives them
 void Parallel::liveInsertionSort(int* const& bucket, std::mutex& bucketMutex, bool& flag, std::mutex& flagMutex,
 								 int& size)
 {
@@ -40,9 +41,9 @@ void Parallel::liveInsertionSort(int* const& bucket, std::mutex& bucketMutex, bo
 			std::swap(bucket[k], bucket[j]);
 }
 
-void Parallel::quickSort(int* const& array, const int& start, const int& end)
+void Parallel::quickSort(int* const& array, const int& start, int end, ThreadPool& pool)
 {
-	if(start < end)
+	while(start < end)
 	{
 		int pivot{start};
 		int idx{end};
@@ -57,8 +58,11 @@ void Parallel::quickSort(int* const& array, const int& start, const int& end)
 			}
 			forward ? ++idx : --idx;
 		}
-		std::array<std::jthread, 2> subProcesses{std::jthread{quickSort, std::ref(array), start, pivot}
-		, std::jthread{quickSort, std::ref(array), pivot + 1, end}};
-		for(std::jthread& i : subProcesses) i.join();
+		pool.queueJob(quickSortMono(array, start, pivot, pool));
+		pool.queueJob(quickSortMono(array, pivot + 1, end, pool));
+		// end = pivot;
 	}
 }
+
+std::function<void()> Parallel::quickSortMono(int* const& array, const int& start, const int& end, ThreadPool& pool)
+{ return [&] { quickSort(array, start, end, pool); }; }

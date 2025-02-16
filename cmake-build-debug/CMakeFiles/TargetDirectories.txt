@@ -1,0 +1,6 @@
+/home/kevin/CLionProjects/SortingComparison/cmake-build-debug/CMakeFiles/SequentialSort.dir
+/home/kevin/CLionProjects/SortingComparison/cmake-build-debug/CMakeFiles/ParallelSort.dir
+/home/kevin/CLionProjects/SortingComparison/cmake-build-debug/CMakeFiles/QParallelSort.dir
+/home/kevin/CLionProjects/SortingComparison/cmake-build-debug/CMakeFiles/Extra.dir
+/home/kevin/CLionProjects/SortingComparison/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kevin/CLionProjects/SortingComparison/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -25,4 +25,9 @@ add_executable(QParallelSort main_qparallel.cpp
         Parallel.hpp
         Commons.cpp
         Commons.hpp
+        thread_pool/ThreadPool.cpp
+        thread_pool/ThreadPool.hpp
 )
+add_executable(Extra extra.cpp
+        thread_pool/ThreadPool.cpp
+        thread_pool/ThreadPool.hpp)

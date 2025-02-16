@@ -1,0 +1,7 @@
+ninja_dyndep_version = 1.0
+build CMakeFiles/SequentialSort.dir/main_sequential.cpp.o: dyndep
+
+build CMakeFiles/SequentialSort.dir/Sequential.cpp.o: dyndep
+
+build CMakeFiles/SequentialSort.dir/Commons.cpp.o: dyndep
+

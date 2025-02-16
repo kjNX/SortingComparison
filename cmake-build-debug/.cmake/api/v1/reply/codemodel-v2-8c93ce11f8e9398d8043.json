@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SortingComparison",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Extra::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Extra-Debug-030460f6c81be4e44d53.json",
+					"name" : "Extra",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ParallelSort::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ParallelSort-Debug-f4d989100f5e03a989d4.json",
+					"name" : "ParallelSort",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "QParallelSort::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QParallelSort-Debug-abc43f285c7a682860d7.json",
+					"name" : "QParallelSort",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SequentialSort::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SequentialSort-Debug-767e8347b567d8d4263f.json",
+					"name" : "SequentialSort",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/kevin/CLionProjects/SortingComparison/cmake-build-debug",
+		"source" : "/home/kevin/CLionProjects/SortingComparison"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

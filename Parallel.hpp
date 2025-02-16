@@ -1,10 +1,9 @@
 #ifndef SORTINGCOMPARISON_PARALLEL_HPP
 #define SORTINGCOMPARISON_PARALLEL_HPP
 
-
-#include <iostream>
 #include <mutex>
 #include "Commons.hpp"
+#include "thread_pool/ThreadPool.hpp"
 
 namespace Parallel
 {
@@ -13,7 +12,8 @@ namespace Parallel
 						   const int& size = Commons::MAX_COUNT);
 	void liveInsertionSort(int* const& bucket, std::mutex& bucketMutex, bool& flag, std::mutex& flagMutex,
 						   int& size);
-	void quickSort(int* const& array, const int& start = 0, const int& end = -1);
+	void quickSort(int* const& array, const int& start, int end, ThreadPool& pool);
+	std::function<void()> quickSortMono(int* const& array, const int& start, const int& end, ThreadPool& pool);
 };
 
 #endif //SORTINGCOMPARISON_PARALLEL_HPP

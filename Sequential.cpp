@@ -2,6 +2,7 @@
 #include <random>
 #include "Sequential.hpp"
 #include "Commons.hpp"
+#include "thread_pool/ThreadPool.hpp"
 
 // generate randomized card sets and put them on their respective bucket (heart, club, spade, diamond or joker)
 std::array<int*, Commons::SET_COUNT> Sequential::makeCardArray(int* const& bucketSizes, const unsigned int& size)

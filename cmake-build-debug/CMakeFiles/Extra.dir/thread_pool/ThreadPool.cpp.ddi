@@ -1,0 +1,11 @@
+{
+"rules": [
+{
+"primary-output": "CMakeFiles/Extra.dir/thread_pool/ThreadPool.cpp.o",
+"requires": [
+]
+}
+],
+"version": 0,
+"revision": 0
+}
